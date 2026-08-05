@@ -1,0 +1,19 @@
+# Environnements virtuels
+venv/
+env/
+.venv/
+
+# Fichiers Python compilés
+__pycache__/
+*.pyc
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Editeurs
+.vscode/
+.idea/
