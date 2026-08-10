@@ -1,0 +1,14 @@
+name: Keep Streamlit App Alive
+
+on:
+  schedule:
+    - cron: '0 */8 * * *'
+  workflow_dispatch:
+
+jobs:
+  ping_app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Streamlit URL
+        run: |
+          curl -I "https://stabmin-app.streamlit.app/"
