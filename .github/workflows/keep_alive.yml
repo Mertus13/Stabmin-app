@@ -6,9 +6,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  ping_app:
+  keep_alive:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Streamlit URL
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create empty commit to wake app
         run: |
-          curl -IL "https://stabmin-app.streamlit.app/"
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git commit --allow-empty -m "Keep alive: wake up Streamlit app"
+          git push
