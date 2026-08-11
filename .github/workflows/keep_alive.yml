@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: Ping Streamlit URL
         run: |
-          curl -I "https://stabmin-app.streamlit.app/"
+          curl -IL "https://stabmin-app.streamlit.app/"
